@@ -32,8 +32,9 @@ touch .devcontainer/devcontainer.json
     "remoteUser": "root",
     "mounts": [
         "source=${localWorkspaceFolder}/aos-labs-2024-main,target=/workspace,type=bind,consistency=cached"
-    ]
+    ],
     ###通过 mounts 属性来指定将本地的 OS 文件夹挂载到容器中的某个路径。比如将本地的代码文件夹挂载到容器中的 /workspace 目录
+    "postCreateCommand": "apt-get update && apt-get install -y make"
 }
 ```
 
@@ -59,6 +60,28 @@ CMD ["/bin/bash"]
 ```
 cd /workspace
 ls
+```
+
+### 查看llvm版本(>=12)
+```
+clang --version
+```
+# 
+构建和启动 QEMU 模拟器 用于在我们机器上(X86)模拟RISC-V架构的CPU
+```
+make qemu-nox
+```
+报错
+```
+make qemu-nox
+***
+*** Error: Couldn't find an i386-*-elf version of GCC/binutils.
+*** Is the directory with i386-jos-elf-gcc in your PATH?
+*** If your i386-*-elf toolchain is installed with a command
+*** prefix other than 'i386-jos-elf-', set your CROSS_COMPILE
+*** environment variable to that prefix and run 'make' again.
+*** To turn off this error, run 'gmake CROSS_COMPILE= ...'.
+***
 ```
 
 
