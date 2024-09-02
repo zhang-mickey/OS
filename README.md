@@ -33,7 +33,7 @@ touch .devcontainer/devcontainer.json
     "mounts": [
         "source=${localWorkspaceFolder}/aos-labs-2024-main,target=/workspace,type=bind,consistency=cached"
     ]
-    ###通过 mounts 属性来指定将本地的 OS 文件夹挂载到容器中的某个路径。比如将本地的 OS 文件夹挂载到容器中的 /workspace 目录
+    ###通过 mounts 属性来指定将本地的 OS 文件夹挂载到容器中的某个路径。比如将本地的代码文件夹挂载到容器中的 /workspace 目录
 }
 ```
 
