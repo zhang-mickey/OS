@@ -84,11 +84,62 @@ make qemu-nox
 ***
 ```
 
+解决
+```
+apt-get update
+apt-get install build-essential bison flex libgmp-dev libmpc-dev libmpfr-dev autoconf2.13 texinfo libncurses5-dev
+```
+Download Binutils Source:
+```
+mkdir -p ~/cross
+cd ~/cross
+wget https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.gz
+tar -xzvf binutils-2.43.1.tar.gz
+cd binutils-2.43.1
+```
+Build and Install Binutils:
+```
+mkdir build
+cd build
+../configure --target=i386-elf --prefix=$HOME/cross --disable-nls
+make
+make install
+```
 
+Download GCC Source:
+```
+cd ~/cross
+wget https://ftp.gnu.org/gnu/gcc/gcc-9.4.0/gcc-9.4.0.tar.gz
+tar -xzvf gcc-9.4.0.tar.gz
+cd gcc-9.4.0
+./contrib/download_prerequisites
+```
+Build and Install GCC:
+```
+cd ~/cross
+mkdir gcc-build
+cd gcc-build
+../gcc-9.4.0/configure --target=i386-elf --prefix=$HOME/cross --enable-languages=c --disable-nls
+make
+make install
+```
+Update Your PATH
+```
+export PATH=$HOME/cross/bin:$PATH
+```
+can add this line to your .bashrc or .zshrc file to make the change permanent:
 
+```
+echo 'export PATH=$HOME/cross/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
 
-
-
+Verify the Installation
+```
+i386-elf-gcc --version
+i386-elf-as --version
+i386-elf-ld --version
+```
 
 
 
