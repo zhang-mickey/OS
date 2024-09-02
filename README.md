@@ -45,7 +45,20 @@ touch .devcontainer/devcontainer.json
 FROM ubuntu:20.04
 
 # 安装 LLVM 和 Clang
-RUN apt-get update && apt-get install -y llvm clang
+#RUN apt-get update && apt-get install -y llvm clang
+# 更新包列表并安装基本开发工具
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    llvm \
+    clang \
+    gcc \
+    g++ \
+    libc6-dev \
+    make \
+    wget \
+    git \
+    curl
 
 # 设置工作目录
 WORKDIR /workspace
