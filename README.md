@@ -98,6 +98,7 @@ make qemu-nox
 ```
 
 解决
+### cross-compiler toolchain for i386-elf
 ```
 apt-get update
 apt-get install build-essential bison flex libgmp-dev libmpc-dev libmpfr-dev autoconf2.13 texinfo libncurses5-dev
