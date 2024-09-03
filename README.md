@@ -141,7 +141,7 @@ Build and Install GCC:
 cd ~/cross
 mkdir gcc-build
 cd gcc-build
-../gcc-10.4.0/configure --target=i386-elf --prefix=$HOME/cross --with-sysroot=$sysrootdir --enable-languages=c --disable-nls --disable-libssp --disable-libmudflap --disable-sjlj-exceptions --disable-multilib
+../gcc-10.4.0/configure --target=i386-elf --prefix=$HOME/cross --with-sysroot=$sysrootdir --enable-languages=c --disable-nls --disable-libssp --disable-libmudflap --disable-sjlj-exceptions --disable-multilib --with-shared --with-gmp=$installdir --with-mpfr=$installdir
 make -j4
 make install
 ```
