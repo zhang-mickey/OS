@@ -119,6 +119,14 @@ cd build
 make
 make install
 ```
+1、configure，这一步一般用来生成 Makefile，为下一步的编译做准备，可以通过在 configure 后加上参数来对安装进行控制
+
+2、make，这一步就是编译，既然configure已经生成了Makefile，那make就可以直接进行编译了。大多数的源代码包都经过这一步进行编译
+3、make insatll，这条命令来进行安装
+make clean：清除编译产生的可执行文件及目标文件(object file，*.o)，也就是说make之后再来一条make clean就等于没有make过，这点在make出错时变得极为有用。
+
+4线程的make吧，make -j4可以让你感受4倍cpu的畅快
+
 
 Download GCC Source:
 ```
