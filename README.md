@@ -131,9 +131,9 @@ make clean：清除编译产生的可执行文件及目标文件(object file，*
 Download GCC Source:
 ```
 cd ~/cross
-wget https://ftp.gnu.org/gnu/gcc/gcc-9.4.0/gcc-9.4.0.tar.gz
-tar -xzvf gcc-9.4.0.tar.gz
-cd gcc-9.4.0
+wget https://ftp.gnu.org/gnu/gcc/gcc-10.4.0/gcc-10.4.0.tar.gz
+tar -xzvf gcc-10.4.0.tar.gz
+cd gcc-10.4.0
 ./contrib/download_prerequisites
 ```
 Build and Install GCC:
@@ -141,7 +141,7 @@ Build and Install GCC:
 cd ~/cross
 mkdir gcc-build
 cd gcc-build
-../gcc-9.4.0/configure --target=i386-elf --prefix=$HOME/cross --enable-languages=c --disable-nls
+../gcc-10.4.0/configure --target=i386-elf --prefix=$HOME/cross --enable-languages=c --disable-nls
 make
 make install
 ```
